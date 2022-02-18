@@ -165,6 +165,9 @@ else
     echo "No OS-specific aliases, OS unknown.";
 fi
 
+# Switching shell
+alias toz='chsh -s /bin/zsh' # to zsh
+
 # Various update aliases
 alias cup='mamba update --all --yes'
 alias aup='conda update --all --yes'
