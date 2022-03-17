@@ -16,20 +16,16 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # Interactive login shell configuration
 #
 
-##############################################################################
-#
-# Interactive login shell configuration
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
-# Interactive prompt
-if [[ "$WHOAMI" == "$MYLOGIN" ]]; then
-    USERNAME=""
-else
-    USERNAME="$WHOAMI@"
-fi
-
-#PS1="%{$fg[green]%}%n%{$reset_color%}[%{$fg[cyan]%}%1~%{$reset_color%}]%{$reset_color%}>> "
-
-PROMPT='%B%F{21}%n[%b%F{69}%1~%F{21}%B] %F{220}►%f%b '
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '%F{22}(%b)%f'
+ 
+# Set up custom prompt
+setopt PROMPT_SUBST
+PROMPT='%B${vcs_info_msg_0_}%F{21}%n[%b%F{69}%1~%F{21}%B] %F{220}>%f%b '
 RPROMPT='%B%F{220}%*%f%b'
 
 
