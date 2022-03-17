@@ -2,7 +2,14 @@ export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 
 ##############################################################################
 #
-# aliases
+# Temporary aliases
+#
+
+alias housing='cd /Users/JDDJ/Documents/Education/UCB/Housing;Rscript housing_crawler.R'
+
+##############################################################################
+#
+# Aliases
 #
 
 # Switching shell
