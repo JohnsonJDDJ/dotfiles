@@ -13,6 +13,13 @@
 # Contact: Fernando Perez <fdo.perez@gmail.com>
 
 ############################################################################
+#
+# Temporary Aliases
+#
+
+alias housing='cd /Users/JDDJ/Documents/Education/UCB/Housing;Rscript housing_crawler.R'
+
+############################################################################
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc

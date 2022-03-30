@@ -1,19 +1,40 @@
 export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 
-LS_COLORS='no=00:fi=00:di=01;36:ln=01;34:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jpg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.png=01;35:*.mpg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:'
+##############################################################################
+#
+# Temporary aliases
+#
+
+alias housing='cd /Users/JDDJ/Documents/Education/UCB/Housing;Rscript housing_crawler.R'
 
 ##############################################################################
 #
-# aliases
+# Aliases
 #
 
 # Switching shell
 alias tob='chsh -s /bin/bash' # to bash
 
+# Dotfiles
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
 ##############################################################################
 #
 # Interactive login shell configuration
 #
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '%F{22}(%b)%f'
+ 
+# Set up custom prompt
+setopt PROMPT_SUBST
+PROMPT='%B${vcs_info_msg_0_}%F{21}%n[%b%F{69}%1~%F{21}%B] %F{220}>%f%b '
+RPROMPT='%B%F{220}%*%f%b'
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
