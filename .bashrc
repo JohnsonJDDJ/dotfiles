@@ -292,7 +292,7 @@ alias ritacubasync-down='hsync ritacuba down'
 #export PYTHONSTARTUP=$HOME/.pythonstartup.py
 
 # Always direct pip installations to --user location
-# export PIP_USER=True
+export PIP_USER=False
 
 # IPython completions
 #source "$HOME/dev/ipython/ipython/examples/IPython Kernel/ipython-completion.bash"
